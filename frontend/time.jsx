@@ -3,29 +3,28 @@
 // then location
 
 import React from "react";
+import Location from './location';
+import Interest from './interest';
 
 const Time = () => {
 
-    const [currDisplay, setDisplay] = React.useState(location)
+    const [currDisplay, setDisplay] = React.useState()
     
      React.useEffect(() => {
-        setDisplay(location)
+       setDisplay(<Location handleSubmit={handleSubmit} />)
      }, []);
 
-    const location = (
-      <form>
-        <input type="text" value="" placeholder="city" />
-        <input type="text" value="" placeholder="state" />
-        <input type="hidden" value="USA" />
-        <input type="submit" value="submit"/>
-      </form>
-    );
-
-    console.log(currDisplay)
+    const handleSubmit = (type) => {
+      switch (type) {
+        case "loc":
+          setDisplay(<Interest />)
+        case 'interest':
+      }
+    }
     
     return (
         <div>
-            {currDisplay}
+          {currDisplay}
         </div>
     );
 

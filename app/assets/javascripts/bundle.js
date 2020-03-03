@@ -199,6 +199,85 @@ var Finance = function Finance() {
 
 /***/ }),
 
+/***/ "./frontend/interest.jsx":
+/*!*******************************!*\
+  !*** ./frontend/interest.jsx ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Interest = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "What kind of work interests you?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "1"
+}, "Animals "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "2"
+}, "Arts, Culture, Humanities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "10 "
+}, "Community Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "3"
+}, "Education"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "4"
+}, "Environment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "5"
+}, "Health"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "6"
+}, "Human Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "8"
+}, "Human and Civil Rights"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "7"
+}, "International"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "9"
+}, "Religion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  value: "11 "
+}, "Research and Public Policy"))));
+/* harmony default export */ __webpack_exports__["default"] = (Interest);
+
+/***/ }),
+
+/***/ "./frontend/location.jsx":
+/*!*******************************!*\
+  !*** ./frontend/location.jsx ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Location = function Location(_ref) {
+  var handleSubmit = _ref.handleSubmit;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: function onSubmit() {
+      return handleSubmit('loc');
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    value: "",
+    placeholder: "city"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    value: "",
+    placeholder: "state"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "hidden",
+    value: "USA"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "submit",
+    value: "submit"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Location);
+
+/***/ }),
+
 /***/ "./frontend/start.jsx":
 /*!****************************!*\
   !*** ./frontend/start.jsx ***!
@@ -250,6 +329,8 @@ var Start = function Start() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location */ "./frontend/location.jsx");
+/* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -263,31 +344,29 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 // then location
 
 
+
+
 var Time = function Time() {
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(location),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       currDisplay = _React$useState2[0],
       setDisplay = _React$useState2[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    setDisplay(location);
+    setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      handleSubmit: handleSubmit
+    }));
   }, []);
-  var location = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    value: "",
-    placeholder: "city"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    value: "",
-    placeholder: "state"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "hidden",
-    value: "USA"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "submit",
-    value: "submit"
-  }));
-  console.log(currDisplay);
+
+  var handleSubmit = function handleSubmit(type) {
+    switch (type) {
+      case "loc":
+        setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+
+      case 'interest':
+    }
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, currDisplay);
 };
 
