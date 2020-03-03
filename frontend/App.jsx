@@ -6,10 +6,11 @@ import Curious from './curious'
 import {HashRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 const App = () => {
+
     return (
       <HashRouter>
+        <Route exact path="/" component={Start} />
         <div>
-          <Start />
           <Switch>
             <Route exact path="/time" component={Time} />
             <Route exact path="/financial" component={Finance} />
