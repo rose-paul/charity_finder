@@ -1,25 +1,14 @@
 import React from "react";
+import { Route, Redirect, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Start = () => {
-
-    function forTime() {
-
-    }
-
-    function forFinances() {
-
-    }
-
-    function forCuriousity() {
-
-    }
-
     return (
         <header>
             How can you volunteer?
-            <button>Time</button>
-            <button>Financial Resources</button>
-            <button>Just Curious</button>
+            <Link to="/time">Time</Link>
+            <Link to="/financial">Financial Resources</Link>
+            <Link to="/curious">Just Curious</Link>
         </header>
     )
 
