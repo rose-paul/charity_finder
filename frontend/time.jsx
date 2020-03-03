@@ -24,13 +24,13 @@ const Time = () => {
     const handleSubmit = (type, data) => {
       switch (type) {
         case "loc":
-          
           setCity(data.city)
           setState(data.state)
           setDisplay(<Interest handleSubmit={handleSubmit}/>)
 
-          case 'interest':
-          console.log("yay")
+        case 'interest':
+          setCategory(data.category)
+
       }
     }
 

@@ -2,13 +2,21 @@ import React from "react";
 
 const Interest = ({ handleSubmit }) => {
  
-    
- 
+
+    const [category, setCategory] = React.useState("")
+
+    const compileData = () => {
+        const data = {
+            category
+        }
+        handleSubmit('interest', data)
+    }
+
     return (
-    <form onSubmit={() => handleSubmit('interest')}>
+    <form onSubmit={compileData}>
         <label>
             What kind of work interests you?
-            <select>
+            <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="1">Animals </option>
                 <option value="2" >Arts, Culture, Humanities</option>
                 <option value="10 ">Community Development</option>
