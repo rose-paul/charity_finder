@@ -218,7 +218,7 @@ var Start = function Start() {
   var startEl = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
 
   var hideStart = function hideStart() {
-    console.log(startEl.current.style.display = "none");
+    startEl.current.style.display = "none";
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
@@ -269,6 +269,9 @@ var Time = function Time() {
       currDisplay = _React$useState2[0],
       setDisplay = _React$useState2[1];
 
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
+    setDisplay(location);
+  }, []);
   var location = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     value: "",
@@ -280,8 +283,12 @@ var Time = function Time() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "hidden",
     value: "USA"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "submit",
+    value: "submit"
   }));
-  return location;
+  console.log(currDisplay);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, currDisplay);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Time);

@@ -8,16 +8,25 @@ const Time = () => {
 
     const [currDisplay, setDisplay] = React.useState(location)
     
-    let location = (
-        <form>
+     React.useEffect(() => {
+        setDisplay(location)
+     }, []);
+
+    const location = (
+      <form>
         <input type="text" value="" placeholder="city" />
         <input type="text" value="" placeholder="state" />
         <input type="hidden" value="USA" />
+        <input type="submit" value="submit"/>
       </form>
     );
+
+    console.log(currDisplay)
     
     return (
-        location
+        <div>
+            {currDisplay}
+        </div>
     );
 
 }

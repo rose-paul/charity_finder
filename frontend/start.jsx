@@ -6,7 +6,7 @@ const Start = () => {
     const startEl = React.useRef();
 
     const hideStart = () => {
-        console.log(startEl.current.style.display = "none")
+        startEl.current.style.display = "none"
     }
 
     return (
