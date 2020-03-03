@@ -99,13 +99,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _frontend_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./frontend/App */ "./frontend/App.jsx");
+/* harmony import */ var _frontend_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./frontend/App */ "./frontend/App.jsx");
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_App__WEBPACK_IMPORTED_MODULE_3__["default"], null), root);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_App__WEBPACK_IMPORTED_MODULE_2__["default"], null), root);
 });
 
 /***/ }),
@@ -121,13 +121,34 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./start */ "./frontend/start.jsx");
 
 
-var Congrats = function Congrats() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("marquee", null, "React is working");
+
+var App = function App() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_start__WEBPACK_IMPORTED_MODULE_1__["default"], null);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Congrats);
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/start.jsx":
+/*!****************************!*\
+  !*** ./frontend/start.jsx ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Start = function Start() {};
+
+/* harmony default export */ __webpack_exports__["default"] = (Start);
 
 /***/ }),
 

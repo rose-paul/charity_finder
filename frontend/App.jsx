@@ -1,5 +1,10 @@
 import React from 'react';
+import Start from './start'
 
-const Congrats = () => <marquee>React is working</marquee>;
+const App = () => {
+    return (
+        <Start />
+    )
+}
 
-export default Congrats;
+export default App;
