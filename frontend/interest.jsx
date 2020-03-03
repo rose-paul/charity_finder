@@ -1,10 +1,14 @@
 import React from "react";
 
-const Interest = () => (
-    <form>
+const Interest = ({ handleSubmit }) => {
+ 
+    
+ 
+    return (
+    <form onSubmit={() => handleSubmit('interest')}>
         <label>
             What kind of work interests you?
-          <select>
+            <select>
                 <option value="1">Animals </option>
                 <option value="2" >Arts, Culture, Humanities</option>
                 <option value="10 ">Community Development</option>
@@ -17,8 +21,10 @@ const Interest = () => (
                 <option value="9" >Religion</option>
                 <option value="11 ">Research and Public Policy</option>
             </select>
+            <input type="submit" value="Submit"/>
         </label>
     </form>
 )
+}
 
 export default Interest;

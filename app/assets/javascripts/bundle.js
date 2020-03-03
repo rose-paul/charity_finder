@@ -212,8 +212,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var Interest = function Interest() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "What kind of work interests you?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+var Interest = function Interest(_ref) {
+  var handleSubmit = _ref.handleSubmit;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: function onSubmit() {
+      return handleSubmit('interest');
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "What kind of work interests you?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "1"
   }, "Animals "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "2"
@@ -235,7 +240,10 @@ var Interest = function Interest() {
     value: "9"
   }, "Religion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "11 "
-  }, "Research and Public Policy"))));
+  }, "Research and Public Policy")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "submit",
+    value: "Submit"
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Interest);
@@ -253,22 +261,53 @@ var Interest = function Interest() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 var Location = function Location(_ref) {
   var handleSubmit = _ref.handleSubmit;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      city = _React$useState2[0],
+      setCity = _React$useState2[1];
+
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      state = _React$useState4[0],
+      setState = _React$useState4[1];
+
+  var compileData = function compileData() {
+    var data = {
+      city: city,
+      state: state
+    };
+    handleSubmit('loc', data);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    onSubmit: function onSubmit() {
-      return handleSubmit('loc');
-    }
+    onSubmit: compileData
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    value: "",
-    placeholder: "city"
+    value: city,
+    placeholder: "city",
+    onChange: function onChange(e) {
+      return setCity(e.target.value);
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    value: "",
-    placeholder: "state"
+    value: state,
+    placeholder: "state",
+    onChange: function onChange(e) {
+      return setState(e.target.value);
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "hidden",
     value: "USA"
@@ -351,10 +390,32 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Time = function Time() {
+  //display stage order: Location, Interest Area, Index
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       currDisplay = _React$useState2[0],
-      setDisplay = _React$useState2[1];
+      setDisplay = _React$useState2[1]; // query vars
+
+
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      city = _React$useState4[0],
+      setCity = _React$useState4[1];
+
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      state = _React$useState6[0],
+      setState = _React$useState6[1];
+
+  var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      category = _React$useState8[0],
+      setCategory = _React$useState8[1];
+
+  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState10 = _slicedToArray(_React$useState9, 2),
+      cause = _React$useState10[0],
+      setCause = _React$useState10[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
     setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -362,12 +423,17 @@ var Time = function Time() {
     }));
   }, []);
 
-  var handleSubmit = function handleSubmit(type) {
+  var handleSubmit = function handleSubmit(type, data) {
     switch (type) {
       case "loc":
-        setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+        setCity(data.city);
+        setState(data.state);
+        setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          handleSubmit: handleSubmit
+        }));
 
       case 'interest':
+        console.log("yay");
     }
   };
 

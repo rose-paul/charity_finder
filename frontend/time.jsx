@@ -8,20 +8,32 @@ import Interest from './interest';
 
 const Time = () => {
 
+    //display stage order: Location, Interest Area, Index
     const [currDisplay, setDisplay] = React.useState()
+    
+    // query vars
+    const [city, setCity] = React.useState("")
+    const [state, setState] = React.useState("")
+    const [category, setCategory] = React.useState("")
+    const [cause, setCause] = React.useState("")
     
      React.useEffect(() => {
        setDisplay(<Location handleSubmit={handleSubmit} />)
      }, []);
 
-    const handleSubmit = (type) => {
+    const handleSubmit = (type, data) => {
       switch (type) {
         case "loc":
-          setDisplay(<Interest />)
-        case 'interest':
+          
+          setCity(data.city)
+          setState(data.state)
+          setDisplay(<Interest handleSubmit={handleSubmit}/>)
+
+          case 'interest':
+          console.log("yay")
       }
     }
-    
+
     return (
         <div>
           {currDisplay}
