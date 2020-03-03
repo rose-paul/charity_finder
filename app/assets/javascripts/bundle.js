@@ -146,7 +146,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var Start = function Start() {};
+var Start = function Start() {
+  function forTime() {}
+
+  function forFinances() {}
+
+  function forCuriousity() {}
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "How can you volunteer?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Financial Resources"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Just Curious"));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Start);
 
