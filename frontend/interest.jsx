@@ -1,6 +1,6 @@
 import React from "react";
 
-const Interest = (
+const Interest = () => (
     <form>
         <label>
             What kind of work interests you?

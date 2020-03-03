@@ -211,29 +211,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-var Interest = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "What kind of work interests you?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "1"
-}, "Animals "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "2"
-}, "Arts, Culture, Humanities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "10 "
-}, "Community Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "3"
-}, "Education"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "4"
-}, "Environment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "5"
-}, "Health"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "6"
-}, "Human Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "8"
-}, "Human and Civil Rights"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "7"
-}, "International"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "9"
-}, "Religion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-  value: "11 "
-}, "Research and Public Policy"))));
+
+var Interest = function Interest() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "What kind of work interests you?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1"
+  }, "Animals "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "2"
+  }, "Arts, Culture, Humanities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "10 "
+  }, "Community Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "3"
+  }, "Education"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "4"
+  }, "Environment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "5"
+  }, "Health"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "6"
+  }, "Human Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "8"
+  }, "Human and Civil Rights"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "7"
+  }, "International"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "9"
+  }, "Religion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "11 "
+  }, "Research and Public Policy"))));
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (Interest);
 
 /***/ }),
