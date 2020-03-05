@@ -369,7 +369,7 @@ var Start = function Start() {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     ref: startEl
-  }, "How can you volunteer?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "We're happy to see you here. There are so many great opportunities to contribute to your community, state, country, world, whatever! Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How can you volunteer?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     onClick: hideStart,
     to: "/time"
   }, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -458,6 +458,7 @@ var Time = function Time() {
 
       case 'interest':
         setCategory(data.category);
+      // pass props here to index component, then build url and call
     }
   };
 
