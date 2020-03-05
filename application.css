@@ -63,3 +63,16 @@ h3 {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+
+.time-outer {
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #d1a6b5, rgb(220, 201, 223));
+}
+
+.time-outer > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20vw;
+}

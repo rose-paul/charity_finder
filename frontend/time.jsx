@@ -35,7 +35,7 @@ const Time = () => {
     }
 
     return (
-        <div>
+        <div className="time-outer">
           {currDisplay}
         </div>
     );

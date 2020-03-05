@@ -462,7 +462,9 @@ var Time = function Time() {
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, currDisplay);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "time-outer"
+  }, currDisplay);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Time);
