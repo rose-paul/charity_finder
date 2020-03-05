@@ -171,7 +171,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Curious = function Curious() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "curious");
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "time-outer curious"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Just Curious?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We're happy you're interested in helping out in some way. While we value curiosity, this space is for action! To be honest, if you made it here you're ready to help. Hop back a page and select one of the other two ways to contribute. At worst, you learn about organizations you didn't know about. At best, you help out!"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Curious);
