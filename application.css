@@ -84,3 +84,16 @@ h3 {
     border: none;
     border-radius: 20px;
 }
+
+.time-outer > form > label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.time-outer > form > label > select {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+}
+

@@ -15,7 +15,7 @@ const Interest = ({ handleSubmit }) => {
     return (
     <form onSubmit={compileData}>
         <label>
-            What kind of work interests you?
+                <h3>What kind of work interests you?</h3>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="1">Animals </option>
                 <option value="2" >Arts, Culture, Humanities</option>

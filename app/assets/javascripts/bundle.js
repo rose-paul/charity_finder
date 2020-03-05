@@ -237,7 +237,7 @@ var Interest = function Interest(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: compileData
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "What kind of work interests you?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "What kind of work interests you?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     value: category,
     onChange: function onChange(e) {
       return setCategory(e.target.value);
