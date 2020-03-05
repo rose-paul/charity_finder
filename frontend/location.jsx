@@ -16,6 +16,7 @@ const Location = ({ handleSubmit }) => {
 
     return (
         <form onSubmit={compileData}>
+            <h3>Where are you located/where can you help?</h3>
             <input type="text" value={city} placeholder="city" onChange={(e) => setCity(e.target.value)}/>
             <input type="text" value={state} placeholder="state" onChange={(e) => setState(e.target.value)}/>
             <input type="hidden" value="USA" />

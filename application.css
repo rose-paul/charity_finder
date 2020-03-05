@@ -33,6 +33,7 @@ h1 {
 h3 {
     width: 50vw;
     text-align: center;
+    font-family: 'Indie Flower', cursive;
 }
 
 @keyframes fadein {
@@ -75,4 +76,11 @@ h3 {
     flex-direction: column;
     align-items: center;
     padding-top: 20vw;
+}
+
+.time-outer form input {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
 }
