@@ -123,9 +123,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./start */ "./frontend/start.jsx");
 /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./time */ "./frontend/time.jsx");
-/* harmony import */ var _finance__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./finance */ "./frontend/finance.jsx");
-/* harmony import */ var _curious__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./curious */ "./frontend/curious.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _curious__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./curious */ "./frontend/curious.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
 
 
 
@@ -134,22 +134,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     exact: true,
     path: "/",
     component: _start__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     exact: true,
     path: "/time",
     component: _time__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     exact: true,
     path: "/financial",
-    component: _finance__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Route"], {
+    component: _interest__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     exact: true,
     path: "/curious",
-    component: _curious__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _curious__WEBPACK_IMPORTED_MODULE_3__["default"]
   }))));
 };
 
@@ -175,27 +175,6 @@ var Curious = function Curious() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Curious);
-
-/***/ }),
-
-/***/ "./frontend/finance.jsx":
-/*!******************************!*\
-  !*** ./frontend/finance.jsx ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var Finance = function Finance() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Financial");
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Finance);
 
 /***/ }),
 
@@ -235,7 +214,9 @@ var Interest = function Interest(_ref) {
     handleSubmit('interest', data);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "time-outer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: compileData
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "What kind of work interests you?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     value: category,
@@ -267,7 +248,7 @@ var Interest = function Interest(_ref) {
   }, "Research and Public Policy")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "submit",
     value: "Submit"
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Interest);

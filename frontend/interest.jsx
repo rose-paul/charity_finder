@@ -13,6 +13,7 @@ const Interest = ({ handleSubmit }) => {
     }
 
     return (
+    <div className="time-outer">
     <form onSubmit={compileData}>
         <label>
                 <h3>What kind of work interests you?</h3>
@@ -32,6 +33,7 @@ const Interest = ({ handleSubmit }) => {
             <input type="submit" value="Submit"/>
         </label>
     </form>
+        </div>
 )
 }
 

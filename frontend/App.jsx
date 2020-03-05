@@ -1,9 +1,9 @@
 import React from 'react';
-import Start from './start'
-import Time from './time'
-import Finance from './finance'
-import Curious from './curious'
+import Start from './start';
+import Time from './time';
+import Curious from './curious';
 import {HashRouter, Route, Switch, Redirect} from 'react-router-dom';
+import Interest from './interest';
 
 const App = () => {
 
@@ -13,7 +13,7 @@ const App = () => {
         <div>
           <Switch>
             <Route exact path="/time" component={Time} />
-            <Route exact path="/financial" component={Finance} />
+            <Route exact path="/financial" component={Interest} />
             <Route exact path="/curious" component={Curious} />
           </Switch>
         </div>
