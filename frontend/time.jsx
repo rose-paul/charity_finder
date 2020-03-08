@@ -5,6 +5,7 @@
 import React from "react";
 import Location from './location';
 import Interest from './interest';
+import CharityIndex from "./charityIndex";
 
 const Time = () => {
 
@@ -15,7 +16,7 @@ const Time = () => {
     const [city, setCity] = React.useState("")
     const [state, setState] = React.useState("")
     const [category, setCategory] = React.useState("")
-    const [cause, setCause] = React.useState("")
+    // const [cause, setCause] = React.useState("")
     
      React.useEffect(() => {
        setDisplay(<Location handleSubmit={handleSubmit} />)
@@ -26,12 +27,11 @@ const Time = () => {
         case "loc":
           setCity(data.city)
           setState(data.state)
-          setDisplay(<Interest handleSubmit={handleSubmit}/>)
+          return setDisplay(<Interest handleSubmit={handleSubmit} />)
 
-        case 'interest':
+        case "interest":
           setCategory(data.category)
-          
-          // pass props here to index component, then build url and call
+          return setDisplay(<CharityIndex city={city} state={state} category={category} />)
       }
     }
 

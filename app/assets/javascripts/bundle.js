@@ -151,6 +151,35 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./frontend/charityIndex.jsx":
+/*!***********************************!*\
+  !*** ./frontend/charityIndex.jsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var CharityIndex = function CharityIndex(props) {
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
+    console.log(props);
+
+    if (props.city == null) {
+      return;
+    }
+  }, []);
+  console.log(props);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We here now");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CharityIndex);
+
+/***/ }),
+
 /***/ "./frontend/interest.jsx":
 /*!*******************************!*\
   !*** ./frontend/interest.jsx ***!
@@ -180,7 +209,10 @@ var Interest = function Interest(_ref) {
       category = _React$useState2[0],
       setCategory = _React$useState2[1];
 
-  var compileData = function compileData() {
+  console.log("heloooo");
+
+  var compileData = function compileData(e) {
+    e.preventDefault();
     var data = {
       category: category
     };
@@ -189,9 +221,7 @@ var Interest = function Interest(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "time-outer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    onSubmit: compileData
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "What kind of work interests you?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "What kind of work interests you?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     value: category,
     onChange: function onChange(e) {
       return setCategory(e.target.value);
@@ -218,9 +248,10 @@ var Interest = function Interest(_ref) {
     value: "9"
   }, "Religion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "11 "
-  }, "Research and Public Policy")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, "Research and Public Policy")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
-    value: "Submit"
+    value: "Submit",
+    onClick: compileData
   }))));
 };
 
@@ -262,7 +293,8 @@ var Location = function Location(_ref) {
       state = _React$useState4[0],
       setState = _React$useState4[1];
 
-  var compileData = function compileData() {
+  var compileData = function compileData(e) {
+    e.preventDefault();
     var data = {
       city: city,
       state: state
@@ -270,9 +302,7 @@ var Location = function Location(_ref) {
     handleSubmit('loc', data);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    onSubmit: compileData
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Where are you located/where can you help?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Where are you located/where can you help?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     value: city,
     placeholder: "city",
@@ -291,7 +321,8 @@ var Location = function Location(_ref) {
     value: "USA"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "submit",
-    value: "submit"
+    value: "submit",
+    onClick: compileData
   }));
 };
 
@@ -349,6 +380,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location */ "./frontend/location.jsx");
 /* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
+/* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -360,6 +392,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 // for time we need location and cause info, later additional settings
 // first cause
 // then location
+
 
 
 
@@ -385,12 +418,8 @@ var Time = function Time() {
   var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       category = _React$useState8[0],
-      setCategory = _React$useState8[1];
+      setCategory = _React$useState8[1]; // const [cause, setCause] = React.useState("")
 
-  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      cause = _React$useState10[0],
-      setCause = _React$useState10[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
     setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -403,13 +432,17 @@ var Time = function Time() {
       case "loc":
         setCity(data.city);
         setState(data.state);
-        setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], {
           handleSubmit: handleSubmit
         }));
 
-      case 'interest':
+      case "interest":
         setCategory(data.category);
-      // pass props here to index component, then build url and call
+        return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_charityIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          city: city,
+          state: state,
+          category: category
+        }));
     }
   };
 

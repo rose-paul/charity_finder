@@ -4,8 +4,9 @@ const Interest = ({ handleSubmit }) => {
  
 
     const [category, setCategory] = React.useState("")
-
-    const compileData = () => {
+    console.log("heloooo")
+    const compileData = (e) => {
+        e.preventDefault()
         const data = {
             category
         }
@@ -14,7 +15,7 @@ const Interest = ({ handleSubmit }) => {
 
     return (
     <div className="time-outer">
-    <form onSubmit={compileData}>
+    <form>
         <label>
                 <h3>What kind of work interests you?</h3>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -30,7 +31,7 @@ const Interest = ({ handleSubmit }) => {
                 <option value="9" >Religion</option>
                 <option value="11 ">Research and Public Policy</option>
             </select>
-            <input type="submit" value="Submit"/>
+            <button type="submit" value="Submit" onClick={compileData}/>
         </label>
     </form>
         </div>
