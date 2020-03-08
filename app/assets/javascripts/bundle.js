@@ -164,6 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _indexItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./indexItem */ "./frontend/indexItem.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -171,6 +172,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -198,11 +200,45 @@ var CharityIndex = function CharityIndex(_ref) {
       setIndex(res.data);
     });
   }, []);
-  console.log(indexItems);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "City: ", city), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "State: ", state), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "category: ", category));
+  return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, indexItems.map(function (item) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_indexItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      charity: item // organization={item.organization.charityName}
+      // mission={item.misson}
+      // tagLine={item.tagline}
+      // website={item.website}
+      // ein={item.ein}
+      // rating={currentRating.rating} 
+
+    });
+  })) : "loading";
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CharityIndex);
+
+/***/ }),
+
+/***/ "./frontend/indexItem.jsx":
+/*!********************************!*\
+  !*** ./frontend/indexItem.jsx ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var CharityIndexItem = function CharityIndexItem(_ref) {
+  var charity = _ref.charity;
+  var tagline = charity.tagline ? charity.tagline : null;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "charity-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, charity.charityName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, charity.mission), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Site: ", charity.websiteURL), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "EIN: ", charity.ein)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CharityIndexItem);
 
 /***/ }),
 
@@ -405,6 +441,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location */ "./frontend/location.jsx");
 /* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
 /* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -416,6 +453,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 // for time we need location and cause info, later additional settings
 // first cause
 // then location
+
 
 
 

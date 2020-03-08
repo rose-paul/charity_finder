@@ -6,6 +6,7 @@ import React from "react";
 import Location from './location';
 import Interest from './interest';
 import CharityIndex from "./charityIndex";
+import { Redirect } from 'react-router-dom';
 
 const Time = () => {
 

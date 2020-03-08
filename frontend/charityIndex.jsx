@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import CharityIndexItem from './indexItem';
 const CharityIndex = ({city, state, category}) => {
 
     const [indexItems, setIndex] = React.useState()
@@ -21,15 +22,24 @@ const CharityIndex = ({city, state, category}) => {
 
     }, [])
 
-    console.log(indexItems)
-
-    return (
+    return indexItems ? (
         <div>
-            <h1>City: {city}</h1>
-            <h1>State: {state}</h1>
-            <h1>category: {category}</h1>
+            {
+                indexItems.map( item =>  (
+                        <CharityIndexItem 
+                        charity={item}
+                        // organization={item.organization.charityName}
+                        // mission={item.misson}
+                        // tagLine={item.tagline}
+                        // website={item.website}
+                        // ein={item.ein}
+                        // rating={currentRating.rating} 
+                         />
+                    )
+                )
+            }
         </div>
-    )
+    ) : "loading"
 }
 
 export default CharityIndex;
