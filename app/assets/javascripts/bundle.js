@@ -164,16 +164,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var CharityIndex = function CharityIndex(props) {
-  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    console.log(props);
-
-    if (props.city == null) {
-      return;
-    }
-  }, []);
-  console.log(props);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.city);
+var CharityIndex = function CharityIndex(_ref) {
+  var city = _ref.city,
+      state = _ref.state,
+      category = _ref.category;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "City: ", city), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "State: ", state), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "category: ", category));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CharityIndex);
@@ -354,7 +349,7 @@ var Start = function Start() {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     ref: startEl
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "There are so many great opportunities to contribute. This site can connect you with these opportunities. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How can you volunteer?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can connect you with opportunities to contribute to charitable organizations and causes based on your interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How can you volunteer?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     onClick: hideStart,
     to: "/time"
   }, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -402,23 +397,28 @@ var Time = function Time() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       currDisplay = _React$useState2[0],
-      setDisplay = _React$useState2[1]; // query vars
+      setDisplay = _React$useState2[1];
 
-
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(0),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      city = _React$useState4[0],
-      setCity = _React$useState4[1];
+      displayNum = _React$useState4[0],
+      setNum = _React$useState4[1]; // query vars
+
 
   var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      state = _React$useState6[0],
-      setState = _React$useState6[1];
+      city = _React$useState6[0],
+      setCity = _React$useState6[1];
 
   var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
-      category = _React$useState8[0],
-      setCategory = _React$useState8[1]; // const [cause, setCause] = React.useState("")
+      state = _React$useState8[0],
+      setState = _React$useState8[1];
+
+  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState10 = _slicedToArray(_React$useState9, 2),
+      category = _React$useState10[0],
+      setCategory = _React$useState10[1]; // const [cause, setCause] = React.useState("")
 
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
@@ -432,14 +432,26 @@ var Time = function Time() {
       case "loc":
         setCity(data.city);
         setState(data.state);
+        setNum(1);
         return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], {
           handleSubmit: handleSubmit
         }));
 
       case "interest":
+        setNum(2);
         setCategory(data.category);
     }
-  };
+  }; // both location and interest are submitted, setDisplay out here to have access to vars
+
+
+  if (displayNum === 2) {
+    setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_charityIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      city: city,
+      state: state,
+      category: category
+    }));
+    setNum(3);
+  }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "time-outer"

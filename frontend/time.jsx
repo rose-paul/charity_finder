@@ -11,6 +11,7 @@ const Time = () => {
 
     //display stage order: Location, Interest Area, Index
     const [currDisplay, setDisplay] = React.useState()
+    const [displayNum, setNum] = React.useState(0)
     
     // query vars
     const [city, setCity] = React.useState("")
@@ -27,11 +28,19 @@ const Time = () => {
         case "loc":
           setCity(data.city)
           setState(data.state)
+          setNum(1)
           return setDisplay(<Interest handleSubmit={handleSubmit} />)
 
         case "interest":
+          setNum(2)
           setCategory(data.category)
       }
+    }
+
+    // both location and interest are submitted, setDisplay out here to have access to vars
+    if (displayNum === 2) {
+      setDisplay(<CharityIndex city={city} state={state} category={category} />)
+      setNum(3)
     }
 
     return (

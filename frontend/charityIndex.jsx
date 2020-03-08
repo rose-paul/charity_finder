@@ -1,18 +1,13 @@
 import React from 'react';
 
-const CharityIndex = (props) => {
-    
-    React.useEffect(() => {
-        console.log(props)
-        if (props.city == null) {
-            return;
-        }
-    }, []);
-
-    console.log(props)
+const CharityIndex = ({city, state, category}) => {
 
     return (
-        <h1>{props.city}</h1>
+        <div>
+            <h1>City: {city}</h1>
+            <h1>State: {state}</h1>
+            <h1>category: {category}</h1>
+        </div>
     )
 }
 
