@@ -125,6 +125,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./time */ "./frontend/time.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
+/* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
+
 
 
 
@@ -144,6 +146,10 @@ var App = function App() {
     exact: true,
     path: "/financial",
     component: _interest__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    exact: true,
+    path: "/index",
+    component: _charityIndex__WEBPACK_IMPORTED_MODULE_5__["default"]
   }))));
 };
 
@@ -202,13 +208,7 @@ var CharityIndex = function CharityIndex(_ref) {
   }, []);
   return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, indexItems.map(function (item) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_indexItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      charity: item // organization={item.organization.charityName}
-      // mission={item.misson}
-      // tagLine={item.tagline}
-      // website={item.website}
-      // ein={item.ein}
-      // rating={currentRating.rating} 
-
+      charity: item
     });
   })) : "loading";
 };
@@ -511,15 +511,16 @@ var Time = function Time() {
   }; // both location and interest are submitted, setDisplay out here to have access to vars
 
 
-  if (displayNum === 2) {
+  if (displayNum == 2) {
+    setNum(3);
     setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_charityIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
       city: city,
       state: state,
       category: category
     }));
-    setNum(3);
   }
 
+  ;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "time-outer"
   }, currDisplay);

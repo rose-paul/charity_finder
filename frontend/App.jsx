@@ -3,6 +3,7 @@ import Start from './start';
 import Time from './time';
 import {HashRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Interest from './interest';
+import CharityIndex from './charityIndex';
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
           <Switch>
             <Route exact path="/time" component={Time} />
             <Route exact path="/financial" component={Interest} />
+            <Route exact path="/index" component={CharityIndex} />
           </Switch>
         </div>
       </HashRouter>

@@ -28,12 +28,6 @@ const CharityIndex = ({city, state, category}) => {
                 indexItems.map( item =>  (
                         <CharityIndexItem 
                         charity={item}
-                        // organization={item.organization.charityName}
-                        // mission={item.misson}
-                        // tagLine={item.tagline}
-                        // website={item.website}
-                        // ein={item.ein}
-                        // rating={currentRating.rating} 
                          />
                     )
                 )

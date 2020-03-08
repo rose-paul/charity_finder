@@ -39,10 +39,11 @@ const Time = () => {
     }
 
     // both location and interest are submitted, setDisplay out here to have access to vars
-    if (displayNum === 2) {
-      setDisplay(<CharityIndex city={city} state={state} category={category} />)
+    if (displayNum == 2) {
       setNum(3)
-    }
+      setDisplay(<CharityIndex city={city} state={state} category={category} />)
+    };
+
 
     return (
         <div className="time-outer">
