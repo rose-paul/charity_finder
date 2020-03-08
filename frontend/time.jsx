@@ -31,7 +31,6 @@ const Time = () => {
 
         case "interest":
           setCategory(data.category)
-          return setDisplay(<CharityIndex city={city} state={state} category={category} />)
       }
     }
 

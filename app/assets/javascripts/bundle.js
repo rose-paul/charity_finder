@@ -173,7 +173,7 @@ var CharityIndex = function CharityIndex(props) {
     }
   }, []);
   console.log(props);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We here now");
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.city);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CharityIndex);
@@ -438,11 +438,6 @@ var Time = function Time() {
 
       case "interest":
         setCategory(data.category);
-        return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_charityIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          city: city,
-          state: state,
-          category: category
-        }));
     }
   };
 

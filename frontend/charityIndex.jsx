@@ -12,7 +12,7 @@ const CharityIndex = (props) => {
     console.log(props)
 
     return (
-        <h1>We here now</h1>
+        <h1>{props.city}</h1>
     )
 }
 
