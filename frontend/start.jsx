@@ -12,14 +12,12 @@ const Start = () => {
     return (
         <header ref={startEl}>
             <h1>Welcome to Charity Finder!</h1>
-            <h3>We're happy to see you here. There are so many great opportunities to 
-                contribute to your community, state, country, world, whatever! Get started 
-                below.
+            <h3>There are so many great opportunities to 
+                contribute. This site can connect you with these opportunities. Get started below.
             </h3>
             <p>How can you volunteer?</p>
             <Link onClick={hideStart} to="/time">Time</Link>
             <Link onClick={hideStart} to="/financial">Financial Resources</Link>
-            <Link onClick={hideStart} to="/curious">Just Curious</Link>
         </header>
     )
 

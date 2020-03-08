@@ -30,6 +30,7 @@ const Time = () => {
 
         case 'interest':
           setCategory(data.category)
+          
           // pass props here to index component, then build url and call
       }
     }

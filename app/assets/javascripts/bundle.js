@@ -123,10 +123,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./start */ "./frontend/start.jsx");
 /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./time */ "./frontend/time.jsx");
-/* harmony import */ var _curious__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./curious */ "./frontend/curious.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
-
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
 
 
 
@@ -134,49 +132,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
     path: "/",
     component: _start__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
     path: "/time",
     component: _time__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
     path: "/financial",
-    component: _interest__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
-    exact: true,
-    path: "/curious",
-    component: _curious__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _interest__WEBPACK_IMPORTED_MODULE_4__["default"]
   }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
-
-/***/ }),
-
-/***/ "./frontend/curious.jsx":
-/*!******************************!*\
-  !*** ./frontend/curious.jsx ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var Curious = function Curious() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "time-outer curious"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Just Curious?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We're happy you're interested in helping out in some way. While we value curiosity, this space is for action! To be honest, if you made it here you're ready to help. Hop back a page and select one of the other two ways to contribute. At worst, you learn about organizations you didn't know about. At best, you help out!"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Curious);
 
 /***/ }),
 
@@ -352,16 +323,13 @@ var Start = function Start() {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     ref: startEl
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "We're happy to see you here. There are so many great opportunities to contribute to your community, state, country, world, whatever! Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How can you volunteer?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "There are so many great opportunities to contribute. This site can connect you with these opportunities. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How can you volunteer?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     onClick: hideStart,
     to: "/time"
   }, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     onClick: hideStart,
     to: "/financial"
-  }, "Financial Resources"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    onClick: hideStart,
-    to: "/curious"
-  }, "Just Curious"));
+  }, "Financial Resources"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Start);
