@@ -4,7 +4,7 @@ const Interest = ({ handleSubmit }) => {
  
 
     const [category, setCategory] = React.useState("")
-    console.log("heloooo")
+
     const compileData = (e) => {
         e.preventDefault()
         const data = {
