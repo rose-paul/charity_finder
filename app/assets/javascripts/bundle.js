@@ -122,11 +122,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./start */ "./frontend/start.jsx");
-/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./time */ "./frontend/time.jsx");
+/* harmony import */ var _questions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./questions */ "./frontend/questions.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
-/* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
-
+/* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
 
 
 
@@ -140,16 +138,12 @@ var App = function App() {
     component: _start__WEBPACK_IMPORTED_MODULE_1__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
-    path: "/time",
-    component: _time__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
-    exact: true,
-    path: "/financial",
-    component: _interest__WEBPACK_IMPORTED_MODULE_4__["default"]
+    path: "/questions",
+    component: _questions__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
     path: "/index",
-    component: _charityIndex__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _charityIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
   }))));
 };
 
@@ -308,11 +302,11 @@ var Interest = function Interest(_ref) {
     value: "9"
   }, "Religion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "11 "
-  }, "Research and Public Policy")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Research and Public Policy"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     value: "Submit",
     onClick: compileData
-  }))));
+  }, "Submit")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Interest);
@@ -390,47 +384,10 @@ var Location = function Location(_ref) {
 
 /***/ }),
 
-/***/ "./frontend/start.jsx":
-/*!****************************!*\
-  !*** ./frontend/start.jsx ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
-
-
-var Start = function Start() {
-  var startEl = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
-
-  var hideStart = function hideStart() {
-    startEl.current.style.display = "none";
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    ref: startEl
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can connect you with opportunities to contribute to charitable organizations and causes based on your interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "How can you volunteer?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    onClick: hideStart,
-    to: "/time"
-  }, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    onClick: hideStart,
-    to: "/financial"
-  }, "Financial Resources"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Start);
-
-/***/ }),
-
-/***/ "./frontend/time.jsx":
-/*!***************************!*\
-  !*** ./frontend/time.jsx ***!
-  \***************************/
+/***/ "./frontend/questions.jsx":
+/*!********************************!*\
+  !*** ./frontend/questions.jsx ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -441,7 +398,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location */ "./frontend/location.jsx");
 /* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
 /* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -458,8 +414,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-var Time = function Time() {
+var Questions = function Questions() {
   //display stage order: Location, Interest Area, Index
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -526,7 +481,41 @@ var Time = function Time() {
   }, currDisplay);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Time);
+/* harmony default export */ __webpack_exports__["default"] = (Questions);
+
+/***/ }),
+
+/***/ "./frontend/start.jsx":
+/*!****************************!*\
+  !*** ./frontend/start.jsx ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var Start = function Start() {
+  var startEl = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
+
+  var hideStart = function hideStart() {
+    startEl.current.style.display = "none";
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    ref: startEl
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can help you find opportunities to contribute to charitable organizations and causes based on location and interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    onClick: hideStart,
+    to: "/questions"
+  }, "Get Started"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Start);
 
 /***/ }),
 

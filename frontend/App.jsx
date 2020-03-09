@@ -1,8 +1,7 @@
 import React from 'react';
 import Start from './start';
-import Time from './time';
-import {HashRouter, Route, Switch, Redirect} from 'react-router-dom';
-import Interest from './interest';
+import Questions from './questions';
+import {HashRouter, Route, Switch} from 'react-router-dom';
 import CharityIndex from './charityIndex';
 
 const App = () => {
@@ -12,8 +11,7 @@ const App = () => {
         <Route exact path="/" component={Start} />
         <div>
           <Switch>
-            <Route exact path="/time" component={Time} />
-            <Route exact path="/financial" component={Interest} />
+            <Route exact path="/questions" component={Questions} />
             <Route exact path="/index" component={CharityIndex} />
           </Switch>
         </div>

@@ -31,10 +31,13 @@ const Interest = ({ handleSubmit }) => {
                 <option value="9" >Religion</option>
                 <option value="11 ">Research and Public Policy</option>
             </select>
-            <button type="submit" value="Submit" onClick={compileData}/>
+            
         </label>
-    </form>
-        </div>
+                <button type="submit" value="Submit" onClick={compileData}>
+                    Submit
+                </button>
+        </form>
+    </div>
 )
 }
 

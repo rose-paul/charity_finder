@@ -6,9 +6,8 @@ import React from "react";
 import Location from './location';
 import Interest from './interest';
 import CharityIndex from "./charityIndex";
-import { Redirect } from 'react-router-dom';
 
-const Time = () => {
+const Questions = () => {
 
     //display stage order: Location, Interest Area, Index
     const [currDisplay, setDisplay] = React.useState()
@@ -53,4 +52,4 @@ const Time = () => {
 
 }
 
-export default Time;
+export default Questions;
