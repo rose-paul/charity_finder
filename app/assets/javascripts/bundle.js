@@ -121,29 +121,23 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./start */ "./frontend/start.jsx");
-/* harmony import */ var _questions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./questions */ "./frontend/questions.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
-
+/* harmony import */ var _questions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./questions */ "./frontend/questions.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
 
 
 
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
-    component: _start__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
-    exact: true,
-    path: "/questions",
-    component: _questions__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    component: _questions__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/index",
-    component: _charityIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _charityIndex__WEBPACK_IMPORTED_MODULE_3__["default"]
   }))));
 };
 
@@ -413,6 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location */ "./frontend/location.jsx");
 /* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
 /* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
+/* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./start */ "./frontend/start.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -421,9 +416,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-// for time we need location and cause info, later additional settings
-// first cause
-// then location
+
 
 
 
@@ -459,13 +452,18 @@ var Questions = function Questions() {
 
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_start__WEBPACK_IMPORTED_MODULE_4__["default"], {
       handleSubmit: handleSubmit
     }));
   }, []);
 
   var handleSubmit = function handleSubmit(type, data) {
     switch (type) {
+      case "start":
+        return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          handleSubmit: handleSubmit
+        }));
+
       case "loc":
         setCity(data.city);
         setState(data.state);
@@ -511,22 +509,22 @@ var Questions = function Questions() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
-
-var Start = function Start() {
+var Start = function Start(_ref) {
+  var handleSubmit = _ref.handleSubmit;
   var startEl = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
 
   var hideStart = function hideStart() {
     startEl.current.style.display = "none";
+    handleSubmit("start");
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     ref: startEl
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can help you find opportunities to contribute to charitable organizations and causes based on location and interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can help you find opportunities to contribute to charitable organizations and causes based on location and interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     onClick: hideStart,
-    to: "/questions"
+    className: "hover"
   }, "Get Started"));
 };
 

@@ -190,3 +190,7 @@ a:hover {
     justify-content: center;
     align-items: center;
 }
+
+.hover:hover {
+    cursor: pointer;
+}
