@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Start = () => {
+const Start = ({ handleSubmit }) => {
 
     const startEl = React.useRef();
 
     const hideStart = () => {
         startEl.current.style.display = "none"
+        handleSubmit("start")
     }
 
     return (
@@ -15,7 +15,7 @@ const Start = () => {
             <h3>This site can help you find opportunities to contribute to charitable organizations and 
                 causes based on location and interest areas. Get started below.
             </h3>
-            <Link onClick={hideStart} to="/questions">Get Started</Link>
+            <p onClick={hideStart} className="hover">Get Started</p>
         </header>
     )
 

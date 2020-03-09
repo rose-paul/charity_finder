@@ -1,11 +1,8 @@
-// for time we need location and cause info, later additional settings
-// first cause
-// then location
-
 import React from "react";
 import Location from './location';
 import Interest from './interest';
 import CharityIndex from "./charityIndex";
+import Start from "./start";
 
 const Questions = () => {
 
@@ -20,11 +17,14 @@ const Questions = () => {
     // const [cause, setCause] = React.useState("")
     
      React.useEffect(() => {
-       setDisplay(<Location handleSubmit={handleSubmit} />)
+       setDisplay(<Start handleSubmit={handleSubmit} />);
      }, []);
 
     const handleSubmit = (type, data) => {
       switch (type) {
+        case "start":
+          return setDisplay(<Location handleSubmit={handleSubmit} />);
+        
         case "loc":
           setCity(data.city)
           setState(data.state)
