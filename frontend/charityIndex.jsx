@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import CharityIndexItem from './indexItem';
+import Loader from "react-loader-spinner";
 const CharityIndex = ({city, state, category}) => {
 
     const [indexItems, setIndex] = React.useState()
@@ -23,18 +24,17 @@ const CharityIndex = ({city, state, category}) => {
     }, [])
 
     return indexItems ? (
-        <div className="index">
-            <h1>We found {indexItems.length} organizations matching your criteria</h1>
-            {
-                indexItems.map( item =>  (
-                        <CharityIndexItem 
-                        charity={item}
-                         />
-                    )
-                )
-            }
-        </div>
-    ) : "loading"
+      <div className="index">
+        <h1>
+          We found {indexItems.length} organizations matching your criteria
+        </h1>
+        {indexItems.map(item => (
+          <CharityIndexItem charity={item} />
+        ))}
+      </div>
+    ) : (
+      <Loader type="BallTriangle" color="rgb(93, 93, 94)" className="loading" />
+    );
 }
 
 export default CharityIndex;
