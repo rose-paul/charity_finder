@@ -200,7 +200,9 @@ var CharityIndex = function CharityIndex(_ref) {
       setIndex(res.data);
     });
   }, []);
-  return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, indexItems.map(function (item) {
+  return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "index"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We found ", indexItems.length, " organizations matching your criteria"), indexItems.map(function (item) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_indexItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
       charity: item
     });
@@ -222,14 +224,20 @@ var CharityIndex = function CharityIndex(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 var CharityIndexItem = function CharityIndexItem(_ref) {
   var charity = _ref.charity;
-  var tagline = charity.tagline ? charity.tagline : null;
+  var tagline = charity.tagLine ? charity.tagLine : null;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "charity-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, charity.charityName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, charity.mission), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Site: ", charity.websiteURL), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "EIN: ", charity.ein)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: charity.websiteURL
+  }, charity.charityName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, charity.mission)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tagline: ", tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Site: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: charity.websiteURL
+  }, charity.websiteURL)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "EIN: ", charity.ein), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", charity.currentRating.rating)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CharityIndexItem);

@@ -23,7 +23,8 @@ const CharityIndex = ({city, state, category}) => {
     }, [])
 
     return indexItems ? (
-        <div>
+        <div className="index">
+            <h1>We found {indexItems.length} organizations matching your criteria</h1>
             {
                 indexItems.map( item =>  (
                         <CharityIndexItem 
