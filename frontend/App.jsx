@@ -2,6 +2,7 @@ import React from 'react';
 import Questions from './questions';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 import CharityIndex from './charityIndex';
+import Start from './start';
 
 const App = () => {
 
@@ -9,7 +10,8 @@ const App = () => {
       <HashRouter>
         <div>
           <Switch>
-            <Route exact path="/" component={Questions} />
+            <Route exact path="/" component={Start} />
+            <Route exact path="/questions" component={Questions} />
             <Route exact path="/index" component={CharityIndex} />
           </Switch>
         </div>

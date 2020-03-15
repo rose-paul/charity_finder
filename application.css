@@ -66,6 +66,33 @@ h3 {
     to   { opacity: 1; }
 }
 
+@keyframes swoopleft {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes swoopout {
+  from {
+      opacity: 1;
+    }
+    to {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+.swoopout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: 1s swoopout;
+}
 
 .time-outer {
     height: 100%;
@@ -75,12 +102,13 @@ h3 {
     justify-content: center;
 }
 
-.time-outer > form {
+.time-outer-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    animation: 1s swoopleft;
 }
 
 .time-outer form input {

@@ -4,8 +4,11 @@ const Location = ({ handleSubmit }) => {
 
     const [city, setCity] = React.useState("")
     const [state, setState] = React.useState("")
+    const [klass, setKlass] = React.useState("time-outer-form")
+
     const compileData = (e) => {
         e.preventDefault()
+        setKlass("swoopout")
         const data = {
             city,
             state
@@ -15,7 +18,7 @@ const Location = ({ handleSubmit }) => {
     }
 
     return (
-        <form>
+        <form className={klass}>
             <h3>Where are you located/where can you help?</h3>
             <input type="text" value={city} placeholder="city" onChange={(e) => setCity(e.target.value)}/>
             <input type="text" value={state} placeholder="state" onChange={(e) => setState(e.target.value)}/>

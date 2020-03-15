@@ -17,19 +17,19 @@ const Questions = () => {
     // const [cause, setCause] = React.useState("")
     
      React.useEffect(() => {
-       setDisplay(<Start handleSubmit={handleSubmit} />);
+       setDisplay(<Location handleSubmit={handleSubmit} />);
      }, []);
 
     const handleSubmit = (type, data) => {
       switch (type) {
-        case "start":
-          return setDisplay(<Location handleSubmit={handleSubmit} />);
         
         case "loc":
           setCity(data.city)
           setState(data.state)
           setNum(1)
-          return setDisplay(<Interest handleSubmit={handleSubmit} />)
+          return setTimeout( () => (
+            setDisplay(<Interest handleSubmit={handleSubmit} />)
+          ), 500)
 
         case "interest":
           setNum(2)

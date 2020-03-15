@@ -124,6 +124,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _questions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./questions */ "./frontend/questions.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _charityIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./charityIndex */ "./frontend/charityIndex.jsx");
+/* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./start */ "./frontend/start.jsx");
+
 
 
 
@@ -133,6 +135,10 @@ var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
+    component: _start__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/questions",
     component: _questions__WEBPACK_IMPORTED_MODULE_1__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
@@ -285,7 +291,9 @@ var Interest = function Interest(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "time-outer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "What kind of work interests you?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    className: "time-outer-form"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "What kind of work interests you?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     value: category,
     onChange: function onChange(e) {
       return setCategory(e.target.value);
@@ -357,8 +365,14 @@ var Location = function Location(_ref) {
       state = _React$useState4[0],
       setState = _React$useState4[1];
 
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState("time-outer-form"),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      klass = _React$useState6[0],
+      setKlass = _React$useState6[1];
+
   var compileData = function compileData(e) {
     e.preventDefault();
+    setKlass("swoopout");
     var data = {
       city: city,
       state: state
@@ -366,7 +380,9 @@ var Location = function Location(_ref) {
     handleSubmit('loc', data);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Where are you located/where can you help?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    className: klass
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Where are you located/where can you help?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     value: city,
     placeholder: "city",
@@ -453,25 +469,22 @@ var Questions = function Questions() {
 
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_start__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
       handleSubmit: handleSubmit
     }));
   }, []);
 
   var handleSubmit = function handleSubmit(type, data) {
     switch (type) {
-      case "start":
-        return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          handleSubmit: handleSubmit
-        }));
-
       case "loc":
         setCity(data.city);
         setState(data.state);
         setNum(1);
-        return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          handleSubmit: handleSubmit
-        }));
+        return setTimeout(function () {
+          return setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_interest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            handleSubmit: handleSubmit
+          }));
+        }, 500);
 
       case "interest":
         setNum(2);
@@ -510,22 +523,38 @@ var Questions = function Questions() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-var Start = function Start(_ref) {
-  var handleSubmit = _ref.handleSubmit;
+
+
+var Start = function Start() {
   var startEl = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
 
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      classN = _React$useState2[0],
+      setClass = _React$useState2[1];
+
   var hideStart = function hideStart() {
-    startEl.current.style.display = "none";
-    handleSubmit("start");
+    // startEl.current.style.display = "none"
+    setClass("swoopout");
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    ref: startEl
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can help you find opportunities to contribute to charitable organizations and causes based on location and interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    ref: startEl,
+    className: "start"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can help you find opportunities to contribute to charitable organizations and causes based on location and interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/questions",
     onClick: hideStart,
-    className: "hover"
+    className: classN
   }, "Get Started"));
 };
 

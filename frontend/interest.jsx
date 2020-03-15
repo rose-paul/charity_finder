@@ -15,7 +15,7 @@ const Interest = ({ handleSubmit }) => {
 
     return (
     <div className="time-outer">
-    <form>
+    <form className="time-outer-form">
         <label>
                 <h3>What kind of work interests you?</h3>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
