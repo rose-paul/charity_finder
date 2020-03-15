@@ -217,7 +217,7 @@ var CharityIndex = function CharityIndex(_ref) {
     className: "error"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Status ", error.status, ": ", error.statusText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, error.data.errorMessage.message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/"
-  }, "Click to Try Again!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure you use the correct two-letter state code and spell the city right"));
+  }, "Click to Try Again!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure you use the correct two-letter state code and spell the city right. If it's a status 404, there may be nothing in our database for that city. Try to search for a nearby larger one."));
   return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "index"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We found ", indexItems.length, " organizations matching your criteria"), indexItems.map(function (item) {
@@ -255,10 +255,14 @@ var CharityIndexItem = function CharityIndexItem(_ref) {
   var tagline = charity.tagLine ? charity.tagLine : null;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "charity-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: charity.websiteURL
-  }, charity.charityName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, charity.mission)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tagline: ", tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Site: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: charity.websiteURL
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: charity.websiteURL,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, charity.charityName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, charity.mission)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tagline: ", tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Site: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: charity.websiteURL,
+    target: "_blank",
+    rel: "noopener noreferrer"
   }, charity.websiteURL)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "EIN: ", charity.ein), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", charity.currentRating.rating, " / 4")));
 };
 

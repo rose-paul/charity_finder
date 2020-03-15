@@ -35,7 +35,9 @@ const CharityIndex = ({city, state, category}) => {
         <h1>Status {error.status}: {error.statusText}</h1>
         <p>{error.data.errorMessage.message}</p>
         <Link to="/">Click to Try Again!</Link>
-        <p>Make sure you use the correct two-letter state code and spell the city right</p>
+        <p>Make sure you use the correct two-letter state code and spell the city right. If it's a status 404,
+          there may be nothing in our database for that city. Try to search for a nearby larger one.
+        </p>
       </div>
     )
 
