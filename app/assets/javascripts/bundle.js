@@ -162,11 +162,12 @@ var App = function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _indexItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./indexItem */ "./frontend/indexItem.jsx");
-/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-loader-spinner */ "./node_modules/react-loader-spinner/index.js");
-/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _indexItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./indexItem */ "./frontend/indexItem.jsx");
+/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loader-spinner */ "./node_modules/react-loader-spinner/index.js");
+/* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -174,6 +175,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -204,7 +206,7 @@ var CharityIndex = function CharityIndex(_ref) {
       fixedCity = fixedCity.join("%20");
     }
 
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get( // `https://api.data.charitynavigator.org/v2/Organizations?app_id=${app_id}&app_key=${app_key}&categoryID=${category}&state=${state}&city=${fixedCity}`
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get( // `https://api.data.charitynavigator.org/v2/Organizations?app_id=${app_id}&app_key=${app_key}&categoryID=${category}&state=${state}&city=${fixedCity}`
     "https://api.data.charitynavigator.org/v2/Organizations?app_id=9cf36ade&app_key=49436800e7b516b00333c71ec060cb1c&categoryID=".concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
       setIndex(res.data);
     })["catch"](function (err) {
@@ -213,14 +215,16 @@ var CharityIndex = function CharityIndex(_ref) {
   }, []);
   if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "error"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Status ", error.status, ": ", error.statusText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, error.data.errorMessage.message));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Status ", error.status, ": ", error.statusText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, error.data.errorMessage.message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/questions"
+  }, "Try Again!"));
   return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "index"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We found ", indexItems.length, " organizations matching your criteria"), indexItems.map(function (item) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_indexItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_indexItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
       charity: item
     });
-  })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loader_spinner__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default.a, {
     type: "BallTriangle",
     color: "rgb(93, 93, 94)",
     className: "loading"
@@ -380,13 +384,27 @@ var Location = function Location(_ref) {
       klass = _React$useState6[0],
       setKlass = _React$useState6[1];
 
+  var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      validation = _React$useState8[0],
+      setValidation = _React$useState8[1];
+
   var compileData = function compileData(e) {
     e.preventDefault();
-    setKlass("swoopout");
+    var newCity = formatCity(city);
     var data = {
-      city: city,
-      state: state
+      city: newCity,
+      state: state.toUpperCase()
     };
+    console.log(data);
+    var customValidation = invalidData(data);
+
+    if (customValidation) {
+      setValidation(customValidation);
+      return;
+    }
+
+    setKlass("swoopout");
     handleSubmit('loc', data);
   };
 
@@ -395,14 +413,14 @@ var Location = function Location(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Where are you located/where can you help?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     value: city,
-    placeholder: "city",
+    placeholder: "city (San Francisco)",
     onChange: function onChange(e) {
       return setCity(e.target.value);
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     value: state,
-    placeholder: "state",
+    placeholder: "state (CA)",
     onChange: function onChange(e) {
       return setState(e.target.value);
     }
@@ -413,8 +431,34 @@ var Location = function Location(_ref) {
     type: "submit",
     value: "submit",
     onClick: compileData
-  }));
+  }), validation);
 };
+
+function invalidData(data) {
+  if (data.state.length !== 2) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "State field must be two characters uppercase");
+  } else if (data.state.length === 0 || data.city.length === 0) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Both fields must be filled in");
+  } else {
+    return "";
+  }
+}
+
+function formatCity(city) {
+  var splitCity = city.split(" ");
+
+  if (!splitCity.length) {
+    return;
+  } else if (splitCity.length == 1) {
+    var word = split[0];
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+  } else {
+    splitCity = splitCity.map(function (word) {
+      return word[0].toUpperCase() + word.slice(1).toLowerCase();
+    });
+    return splitCity.join(" ");
+  }
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Location);
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 import CharityIndexItem from './indexItem';
 import Loader from "react-loader-spinner";
@@ -33,6 +34,7 @@ const CharityIndex = ({city, state, category}) => {
       <div className="error">
         <h1>Status {error.status}: {error.statusText}</h1>
         <p>{error.data.errorMessage.message}</p>
+        <Link to="/questions">Try Again!</Link>
       </div>
     )
 
