@@ -21,7 +21,7 @@ const Interest = ({ handleSubmit }) => {
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="1">Animals </option>
                 <option value="2" >Arts, Culture, Humanities</option>
-                <option value="10 ">Community Development</option>
+                <option value="10">Community Development</option>
                 <option value="3" >Education</option>
                 <option value="4" >Environment</option>
                 <option value="5" >Health</option>

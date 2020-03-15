@@ -303,7 +303,7 @@ var Interest = function Interest(_ref) {
   }, "Animals "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "2"
   }, "Arts, Culture, Humanities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "10 "
+    value: "10"
   }, "Community Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "3"
   }, "Education"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
