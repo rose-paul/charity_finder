@@ -34,7 +34,8 @@ const CharityIndex = ({city, state, category}) => {
       <div className="error">
         <h1>Status {error.status}: {error.statusText}</h1>
         <p>{error.data.errorMessage.message}</p>
-        <Link to="/questions">Try Again!</Link>
+        <Link to="/">Click to Try Again!</Link>
+        <p>Make sure you use the correct two-letter state code and spell the city right</p>
       </div>
     )
 

@@ -216,8 +216,8 @@ var CharityIndex = function CharityIndex(_ref) {
   if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "error"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Status ", error.status, ": ", error.statusText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, error.data.errorMessage.message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/questions"
-  }, "Try Again!"));
+    to: "/"
+  }, "Click to Try Again!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure you use the correct two-letter state code and spell the city right"));
   return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "index"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We found ", indexItems.length, " organizations matching your criteria"), indexItems.map(function (item) {
@@ -290,7 +290,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var Interest = function Interest(_ref) {
   var handleSubmit = _ref.handleSubmit;
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState("1"),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       category = _React$useState2[0],
       setCategory = _React$useState2[1];
@@ -450,7 +450,7 @@ function formatCity(city) {
   if (!splitCity.length) {
     return;
   } else if (splitCity.length == 1) {
-    var word = split[0];
+    var word = splitCity[0];
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
   } else {
     splitCity = splitCity.map(function (word) {

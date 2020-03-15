@@ -3,7 +3,7 @@ import React from "react";
 const Interest = ({ handleSubmit }) => {
  
 
-    const [category, setCategory] = React.useState("")
+    const [category, setCategory] = React.useState("1")
 
     const compileData = (e) => {
         e.preventDefault()
