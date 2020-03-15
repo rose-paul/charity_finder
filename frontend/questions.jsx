@@ -2,7 +2,6 @@ import React from "react";
 import Location from './location';
 import Interest from './interest';
 import CharityIndex from "./charityIndex";
-import Start from "./start";
 
 const Questions = () => {
 
