@@ -190,6 +190,11 @@ var CharityIndex = function CharityIndex(_ref) {
       indexItems = _React$useState2[0],
       setIndex = _React$useState2[1];
 
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      error = _React$useState4[0],
+      setError = _React$useState4[1];
+
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
     var fixedCity = city.split(" ");
 
@@ -202,8 +207,13 @@ var CharityIndex = function CharityIndex(_ref) {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get( // `https://api.data.charitynavigator.org/v2/Organizations?app_id=${app_id}&app_key=${app_key}&categoryID=${category}&state=${state}&city=${fixedCity}`
     "https://api.data.charitynavigator.org/v2/Organizations?app_id=9cf36ade&app_key=49436800e7b516b00333c71ec060cb1c&categoryID=".concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
       setIndex(res.data);
+    })["catch"](function (err) {
+      setError(err.response);
     });
   }, []);
+  if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "error"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Status ", error.status, ": ", error.statusText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, error.data.errorMessage.message));
   return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "index"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We found ", indexItems.length, " organizations matching your criteria"), indexItems.map(function (item) {

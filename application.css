@@ -226,6 +226,14 @@ a:hover {
     align-items: center;
 }
 
-.hover:hover {
-    cursor: pointer;
+.error {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error > h1 {
+    margin: 0;
 }
