@@ -13,7 +13,7 @@ const CharityIndexItem = ({ charity }) => {
                 <li>Tagline: {tagline}</li>
                 <li>Site: <Link to={charity.websiteURL}>{charity.websiteURL}</Link></li>
                 <li>EIN: {charity.ein}</li>
-                <li>Rating: {charity.currentRating.rating}</li>
+                <li>Rating: {charity.currentRating.rating} / 4</li>
             </ul>
         </div>
     )

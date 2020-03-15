@@ -239,7 +239,7 @@ var CharityIndexItem = function CharityIndexItem(_ref) {
     to: charity.websiteURL
   }, charity.charityName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, charity.mission)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tagline: ", tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Site: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: charity.websiteURL
-  }, charity.websiteURL)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "EIN: ", charity.ein), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", charity.currentRating.rating)));
+  }, charity.websiteURL)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "EIN: ", charity.ein), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Rating: ", charity.currentRating.rating, " / 4")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CharityIndexItem);
