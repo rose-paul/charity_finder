@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 const CharityIndexItem = ({ charity }) => {
     const tagline = charity.tagLine ? charity.tagLine : null

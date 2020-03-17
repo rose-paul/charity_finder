@@ -220,7 +220,9 @@ var CharityIndex = function CharityIndex(_ref) {
   }, "Click to Try Again!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure you use the correct two-letter state code and spell the city right. If it's a status 404, there may be nothing in our database for that city. Try to search for a nearby larger one."));
   return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "index"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We found ", indexItems.length, " organizations matching your criteria"), indexItems.map(function (item) {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "We found ", indexItems.length, " organizations matching your criteria"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/"
+  }, "Back to Homepage"), indexItems.map(function (item) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_indexItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
       charity: item
     });
@@ -246,8 +248,6 @@ var CharityIndex = function CharityIndex(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
 
 
 var CharityIndexItem = function CharityIndexItem(_ref) {

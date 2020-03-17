@@ -46,6 +46,7 @@ const CharityIndex = ({city, state, category}) => {
         <h1>
           We found {indexItems.length} organizations matching your criteria
         </h1>
+        <Link to="/">Back to Homepage</Link>
         {indexItems.map(item => (
           <CharityIndexItem charity={item} />
         ))}
