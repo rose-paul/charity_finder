@@ -38,16 +38,6 @@ const Location = ({ handleSubmit }) => {
     )
 }
 
-function invalidData(data) {
-    if (data.state.length !== 2) {
-        return <p>State field must be two characters uppercase</p> 
-    } else if (data.state.length === 0 || data.city.length === 0) {
-        return <p>Both fields must be filled in</p>
-    } else {
-        return ""
-    }
-}
-
 function formatCity(city) {
     if (!city.length) return "";
 
@@ -56,12 +46,25 @@ function formatCity(city) {
         let word = splitCity[0];
         return word[0].toUpperCase() + word.slice(1).toLowerCase();
     } else {
-        splitCity = splitCity.map( word => {
+        splitCity = splitCity.map(word => {
             return word[0].toUpperCase() + word.slice(1).toLowerCase();
         })
         return splitCity.join(" ")
     }
 }
+
+function invalidData(data) {
+    
+    if (data.state.length === 0 || data.city.length === 0) {
+        return <p>Both fields must be filled in</p>
+    } else if (data.state.length !== 2) {
+        return <p>State field must be two characters uppercase</p>
+    } else {
+        return ""
+    }
+}
+
+
 
 
 export default Location;

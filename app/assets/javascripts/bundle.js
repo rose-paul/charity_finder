@@ -437,16 +437,6 @@ var Location = function Location(_ref) {
   }), validation);
 };
 
-function invalidData(data) {
-  if (data.state.length !== 2) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "State field must be two characters uppercase");
-  } else if (data.state.length === 0 || data.city.length === 0) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Both fields must be filled in");
-  } else {
-    return "";
-  }
-}
-
 function formatCity(city) {
   if (!city.length) return "";
   var splitCity = city.split(" ");
@@ -459,6 +449,16 @@ function formatCity(city) {
       return word[0].toUpperCase() + word.slice(1).toLowerCase();
     });
     return splitCity.join(" ");
+  }
+}
+
+function invalidData(data) {
+  if (data.state.length === 0 || data.city.length === 0) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Both fields must be filled in");
+  } else if (data.state.length !== 2) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "State field must be two characters uppercase");
+  } else {
+    return "";
   }
 }
 
@@ -519,8 +519,7 @@ var Questions = function Questions() {
   var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       category = _React$useState10[0],
-      setCategory = _React$useState10[1]; // const [cause, setCause] = React.useState("")
-
+      setCategory = _React$useState10[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
     setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -541,10 +540,10 @@ var Questions = function Questions() {
         }, 500);
 
       case "interest":
-        setNum(2);
         setCategory(data.category);
+        setNum(2);
     }
-  }; // both location and interest are submitted, setDisplay out here to have access to vars
+  }; // both location and interest are submitted, setDisplay out here to have access to vars and pass as props
 
 
   if (displayNum == 2) {
@@ -578,37 +577,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
 var Start = function Start() {
-  var startEl = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef();
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      classN = _React$useState2[0],
-      setClass = _React$useState2[1];
-
-  var hideStart = function hideStart() {
-    // startEl.current.style.display = "none"
-    setClass("swoopout");
-  };
-
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    ref: startEl,
     className: "start"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Charity Finder!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "This site can help you find opportunities to contribute to charitable organizations and causes based on location and interest areas. Get started below."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/questions",
-    onClick: hideStart,
-    className: classN
+    to: "/questions"
   }, "Get Started"));
 };
 

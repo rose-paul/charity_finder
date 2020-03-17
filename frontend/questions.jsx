@@ -13,9 +13,8 @@ const Questions = () => {
     const [city, setCity] = React.useState("")
     const [state, setState] = React.useState("")
     const [category, setCategory] = React.useState("")
-    // const [cause, setCause] = React.useState("")
     
-     React.useEffect(() => {
+     React.useEffect( () => {
        setDisplay(<Location handleSubmit={handleSubmit} />);
      }, []);
 
@@ -31,12 +30,12 @@ const Questions = () => {
           ), 500)
 
         case "interest":
-          setNum(2)
           setCategory(data.category)
+          setNum(2)
       }
     }
 
-    // both location and interest are submitted, setDisplay out here to have access to vars
+    // both location and interest are submitted, setDisplay out here to have access to vars and pass as props
     if (displayNum == 2) {
       setNum(3)
       setDisplay(<CharityIndex city={city} state={state} category={category} />)

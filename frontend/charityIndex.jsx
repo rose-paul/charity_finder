@@ -11,15 +11,14 @@ const CharityIndex = ({city, state, category}) => {
 
     React.useEffect( () => {
         let fixedCity = city.split(" ");
-        
+
         if (fixedCity.length === 1) {
             fixedCity = city
         } else {
             fixedCity = fixedCity.join("%20")
         }
         axios.get(
-            // `https://api.data.charitynavigator.org/v2/Organizations?app_id=${app_id}&app_key=${app_key}&categoryID=${category}&state=${state}&city=${fixedCity}`
-            `https://api.data.charitynavigator.org/v2/Organizations?app_id=9cf36ade&app_key=49436800e7b516b00333c71ec060cb1c&categoryID=${category}&state=${state}&city=${fixedCity}`
+            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${app_id}&app_key=${app_key}&categoryID=${category}&state=${state}&city=${fixedCity}`
         ).then(
             res => {
               setIndex(res.data)
