@@ -448,11 +448,10 @@ function invalidData(data) {
 }
 
 function formatCity(city) {
+  if (!city.length) return "";
   var splitCity = city.split(" ");
 
-  if (!splitCity.length) {
-    return;
-  } else if (splitCity.length == 1) {
+  if (splitCity.length == 1) {
     var word = splitCity[0];
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
   } else {

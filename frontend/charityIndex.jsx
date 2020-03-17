@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import CharityIndexItem from './indexItem';
 import Loader from "react-loader-spinner";
+
 const CharityIndex = ({city, state, category}) => {
 
     const [indexItems, setIndex] = React.useState()
     const [error, setError] = React.useState()
 
-    React.useEffect(() => {
+    React.useEffect( () => {
         let fixedCity = city.split(" ");
+        
         if (fixedCity.length === 1) {
             fixedCity = city
         } else {

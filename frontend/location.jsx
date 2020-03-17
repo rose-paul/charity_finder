@@ -9,11 +9,13 @@ const Location = ({ handleSubmit }) => {
 
     const compileData = (e) => {
         e.preventDefault()
+
         let newCity = formatCity(city);
         const data = {
             city: newCity,
             state: state.toUpperCase()
         }
+
         let customValidation = invalidData(data)
         if (customValidation) {
             setValidation(customValidation)
@@ -47,10 +49,10 @@ function invalidData(data) {
 }
 
 function formatCity(city) {
+    if (!city.length) return "";
+
     let splitCity = city.split(" ");
-    if (!splitCity.length) {
-        return
-    } else if (splitCity.length == 1) {
+    if (splitCity.length == 1) {
         let word = splitCity[0];
         return word[0].toUpperCase() + word.slice(1).toLowerCase();
     } else {
