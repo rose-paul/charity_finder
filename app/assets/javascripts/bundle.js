@@ -400,7 +400,6 @@ var Location = function Location(_ref) {
       city: newCity,
       state: state.toUpperCase()
     };
-    console.log(data);
     var customValidation = invalidData(data);
 
     if (customValidation) {

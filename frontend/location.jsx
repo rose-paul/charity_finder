@@ -14,7 +14,6 @@ const Location = ({ handleSubmit }) => {
             city: newCity,
             state: state.toUpperCase()
         }
-        console.log(data)
         let customValidation = invalidData(data)
         if (customValidation) {
             setValidation(customValidation)
