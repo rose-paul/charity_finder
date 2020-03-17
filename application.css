@@ -95,6 +95,7 @@ h3 {
 }
 
 .time-outer {
+    min-height: 100vh;
     height: 100%;
     background-image: linear-gradient(to bottom right, #ffffff, rgb(189, 189, 192));
     display: flex;
@@ -157,11 +158,13 @@ button {
 }
 
 .index {
+    min-height: 100vh;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: linear-gradient(to bottom right, #ffffff, rgb(189, 189, 192));
+    background-size: cover;
     -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
