@@ -110,6 +110,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./env/keys.js":
+/*!*********************!*\
+  !*** ./env/keys.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {module.exports = {
+  app_id: process.env.app_id,
+  app_key: process.env.app_key
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
 /***/ "./frontend/App.jsx":
 /*!**************************!*\
   !*** ./frontend/App.jsx ***!
@@ -168,6 +183,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _indexItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./indexItem */ "./frontend/indexItem.jsx");
 /* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loader-spinner */ "./node_modules/react-loader-spinner/index.js");
 /* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _env_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../env/keys */ "./env/keys.js");
+/* harmony import */ var _env_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_env_keys__WEBPACK_IMPORTED_MODULE_5__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -175,6 +192,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -198,6 +216,7 @@ var CharityIndex = function CharityIndex(_ref) {
       setError = _React$useState4[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
+    console.log(_env_keys__WEBPACK_IMPORTED_MODULE_5__["app_id"]);
     var fixedCity = city.split(" ");
 
     if (fixedCity.length === 1) {
@@ -206,7 +225,7 @@ var CharityIndex = function CharityIndex(_ref) {
       fixedCity = fixedCity.join("%20");
     }
 
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(app_id, "&app_key=").concat(app_key, "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(_env_keys__WEBPACK_IMPORTED_MODULE_5__["app_id"], "&app_key=").concat(_env_keys__WEBPACK_IMPORTED_MODULE_5__["app_key"], "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
       setIndex(res.data);
     })["catch"](function (err) {
       setError(err.response);
