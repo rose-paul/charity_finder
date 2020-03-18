@@ -1,0 +1,5 @@
+steps:
+  - name: App Key
+    env: 
+      app_id: ${{ secrets.app_id }}
+      app_key: ${{ secrets.app_key }}

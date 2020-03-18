@@ -110,21 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
-/***/ "./env/api.js":
-/*!********************!*\
-  !*** ./env/api.js ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {module.exports = {
-  app_id: process.env.app_id,
-  app_key: process.env.app_key
-};
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
-
-/***/ }),
-
 /***/ "./frontend/App.jsx":
 /*!**************************!*\
   !*** ./frontend/App.jsx ***!
@@ -183,8 +168,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _indexItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./indexItem */ "./frontend/indexItem.jsx");
 /* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-loader-spinner */ "./node_modules/react-loader-spinner/index.js");
 /* harmony import */ var react_loader_spinner__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_loader_spinner__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _env_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../env/api */ "./env/api.js");
-/* harmony import */ var _env_api__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_env_api__WEBPACK_IMPORTED_MODULE_5__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -198,7 +181,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // const keys = require("../config/keys");
 
 var CharityIndex = function CharityIndex(_ref) {
   var city = _ref.city,
@@ -224,7 +206,7 @@ var CharityIndex = function CharityIndex(_ref) {
       fixedCity = fixedCity.join("%20");
     }
 
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(_env_api__WEBPACK_IMPORTED_MODULE_5__["app_id"], "&app_key=").concat(_env_api__WEBPACK_IMPORTED_MODULE_5__["app_key"], "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(app_id, "&app_key=").concat(app_key, "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
       setIndex(res.data);
     })["catch"](function (err) {
       setError(err.response);
