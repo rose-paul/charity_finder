@@ -4,9 +4,8 @@ import axios from 'axios'
 import CharityIndexItem from './indexItem';
 import Loader from "react-loader-spinner";
 // import { app_id, app_key } from '../env/keys'
-const app_id = require("../env/keys").app_id;
-const app_key = require("../env/keys").app_key;
-console.log(app_id)
+const appId = require("../env/keys").appId;
+const appKey = require("../env/keys").appKey;
 
 const CharityIndex = ({city, state, category}) => {
 
@@ -24,7 +23,7 @@ const CharityIndex = ({city, state, category}) => {
         }
         axios
           .get(
-            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&categoryID=${category}&state=${state}&city=${fixedCity}`
+            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
           )
           .then(res => {
             setIndex(res.data);

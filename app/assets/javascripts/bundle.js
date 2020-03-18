@@ -118,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {module.exports = {
-  app_id: process.env.APP_ID,
-  app_key: process.env.APP_KEY
+  appId: process.env.APP_ID,
+  appKey: process.env.APP_KEY
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
@@ -175,7 +175,7 @@ var App = function App() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -197,11 +197,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
  // import { app_id, app_key } from '../env/keys'
 
-var app_id = __webpack_require__(/*! ../env/keys */ "./env/keys.js").app_id;
+var appId = __webpack_require__(/*! ../env/keys */ "./env/keys.js").appId;
 
-var app_key = __webpack_require__(/*! ../env/keys */ "./env/keys.js").app_key;
-
-console.log(app_id);
+var appKey = __webpack_require__(/*! ../env/keys */ "./env/keys.js").appKey;
 
 var CharityIndex = function CharityIndex(_ref) {
   var city = _ref.city,
@@ -227,7 +225,7 @@ var CharityIndex = function CharityIndex(_ref) {
       fixedCity = fixedCity.join("%20");
     }
 
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(process.env.APP_ID, "&app_key=").concat(process.env.APP_KEY, "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(appId, "&app_key=").concat(appKey, "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
       setIndex(res.data);
     })["catch"](function (err) {
       setError(err.response);
@@ -254,7 +252,6 @@ var CharityIndex = function CharityIndex(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CharityIndex);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
