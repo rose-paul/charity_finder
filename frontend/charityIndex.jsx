@@ -21,17 +21,16 @@ const CharityIndex = ({city, state, category}) => {
         } else {
             fixedCity = fixedCity.join("%20")
         }
-        axios.get(
-            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${app_id}&app_key=${app_key}&categoryID=${category}&state=${state}&city=${fixedCity}`
-        ).then(
-            res => {
-              setIndex(res.data)
-            }
-        ).catch(
-          err => {
-            setError(err.response)
-          }
-        )
+        axios
+          .get(
+            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&categoryID=${category}&state=${state}&city=${fixedCity}`
+          )
+          .then(res => {
+            setIndex(res.data);
+          })
+          .catch(err => {
+            setError(err.response);
+          });
 
     }, [])
 
