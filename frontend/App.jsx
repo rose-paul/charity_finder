@@ -9,6 +9,7 @@ const App = () => {
     return (
       <HashRouter>
         <div>
+        <p>{process.env.APP_ID}</p>
           <Switch>
             <Route exact path="/" component={Start} />
             <Route exact path="/questions" component={Questions} />
