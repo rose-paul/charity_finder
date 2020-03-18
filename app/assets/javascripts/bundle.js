@@ -216,7 +216,6 @@ var CharityIndex = function CharityIndex(_ref) {
       setError = _React$useState4[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    console.log(_env_keys__WEBPACK_IMPORTED_MODULE_5__["app_id"]);
     var fixedCity = city.split(" ");
 
     if (fixedCity.length === 1) {

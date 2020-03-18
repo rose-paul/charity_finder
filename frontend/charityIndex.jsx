@@ -12,7 +12,6 @@ const CharityIndex = ({city, state, category}) => {
 
     
     React.useEffect( () => {
-        console.log(app_id)
         let fixedCity = city.split(" ");
 
         if (fixedCity.length === 1) {
