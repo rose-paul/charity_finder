@@ -6,6 +6,7 @@ import Loader from "react-loader-spinner";
 // import { app_id, app_key } from '../env/keys'
 const app_id = require("../env/keys").app_id;
 const app_key = require("../env/keys").app_key;
+console.log(app_id)
 
 const CharityIndex = ({city, state, category}) => {
 

@@ -201,6 +201,8 @@ var app_id = __webpack_require__(/*! ../env/keys */ "./env/keys.js").app_id;
 
 var app_key = __webpack_require__(/*! ../env/keys */ "./env/keys.js").app_key;
 
+console.log(app_id);
+
 var CharityIndex = function CharityIndex(_ref) {
   var city = _ref.city,
       state = _ref.state,
