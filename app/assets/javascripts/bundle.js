@@ -204,10 +204,21 @@ var CharityIndex = function CharityIndex(_ref) {
       fixedCity = city;
     } else {
       fixedCity = fixedCity.join("%20");
-    }
+    } // axios
+    //   .get(
+    //     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
+    //   )
 
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(appId, "&app_key=").concat(appKey, "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity)).then(function (res) {
+
+    var req = {
+      fixedCity: fixedCity,
+      state: state,
+      category: category
+    };
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/call", req).then(function (res) {
+      console.log(res);
       setIndex(res.data);
+      console.log(indexItems);
     })["catch"](function (err) {
       setError(err.response);
     });
@@ -474,7 +485,7 @@ function invalidData(data) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location */ "./frontend/location.jsx");
 /* harmony import */ var _interest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./interest */ "./frontend/interest.jsx");
@@ -520,7 +531,6 @@ var Questions = function Questions() {
       category = _React$useState10[0],
       setCategory = _React$useState10[1];
 
-  console.log(process.env);
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
     setDisplay(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location__WEBPACK_IMPORTED_MODULE_1__["default"], {
       handleSubmit: handleSubmit
@@ -562,7 +572,6 @@ var Questions = function Questions() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Questions);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 

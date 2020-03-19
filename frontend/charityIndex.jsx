@@ -18,12 +18,20 @@ const CharityIndex = ({city, state, category}) => {
         } else {
             fixedCity = fixedCity.join("%20")
         }
-        axios
-          .get(
-            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
-          )
+        // axios
+        //   .get(
+        //     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
+        //   )
+        const req = {
+          fixedCity,
+          state,
+          category
+        }
+      axios.get(`/api/call`, req)
           .then(res => {
+            console.log(res)
             setIndex(res.data);
+            console.log(indexItems)
           })
           .catch(err => {
             setError(err.response);

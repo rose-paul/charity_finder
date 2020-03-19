@@ -13,7 +13,7 @@ const Questions = () => {
     const [city, setCity] = React.useState("")
     const [state, setState] = React.useState("")
     const [category, setCategory] = React.useState("")
-    console.log(process.env)
+
      React.useEffect( () => {
        setDisplay(<Location handleSubmit={handleSubmit} />);
      }, []);
