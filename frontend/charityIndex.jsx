@@ -18,25 +18,14 @@ const CharityIndex = ({city, state, category}) => {
             fixedCity = fixedCity.join("%20")
         }
 
-        // axios
-        //   .get(
-        //     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
-        //   )
-
-        const params = {
-          fixedCity,
-          state,
-          category
-        }
         axios.get(`/call`, { 
-          params: {
-          fixedCity,
-          state,
-          category
-        }
-      })
+            params: {
+            fixedCity,
+            state,
+            category
+          }
+        })
           .then(res => {
-            console.log(res)
             setIndex(res.data);
           })
           .catch(err => {

@@ -204,17 +204,8 @@ var CharityIndex = function CharityIndex(_ref) {
       fixedCity = city;
     } else {
       fixedCity = fixedCity.join("%20");
-    } // axios
-    //   .get(
-    //     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
-    //   )
+    }
 
-
-    var params = {
-      fixedCity: fixedCity,
-      state: state,
-      category: category
-    };
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/call", {
       params: {
         fixedCity: fixedCity,
@@ -222,7 +213,6 @@ var CharityIndex = function CharityIndex(_ref) {
         category: category
       }
     }).then(function (res) {
-      console.log(res);
       setIndex(res.data);
     })["catch"](function (err) {
       setError(err.response);
