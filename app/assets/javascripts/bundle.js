@@ -95,7 +95,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
@@ -103,12 +103,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log(process.env.APP_ID);
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_frontend_App__WEBPACK_IMPORTED_MODULE_2__["default"], null), root);
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -206,18 +204,21 @@ var CharityIndex = function CharityIndex(_ref) {
       fixedCity = city;
     } else {
       fixedCity = fixedCity.join("%20");
-    }
+    } // axios
+    //   .get(
+    //     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
+    //   )
 
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://api.data.charitynavigator.org/v2/Organizations?app_id=".concat(appId, "&app_key=").concat(appKey, "&categoryID=").concat(category, "&state=").concat(state, "&city=").concat(fixedCity));
+
     var req = {
       fixedCity: fixedCity,
       state: state,
       category: category
     };
+    console.log(req);
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/call", req).then(function (res) {
       console.log(res);
       setIndex(res.data);
-      console.log(indexItems);
     })["catch"](function (err) {
       setError(err.response);
     });
