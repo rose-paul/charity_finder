@@ -8,7 +8,7 @@ const axios = require('axios');
 
 app.use(express.static(__dirname));
 
-app.get("/", (req, res) => {
+app.get("/app", (req, res) => {
   res.sendFile(path.resolve(__dirname, "index.html"));
 });
 
