@@ -1,5 +1,4 @@
 const path = require('path');
-var dotenv = require("dotenv").config({ path: "./.env" });
 
 module.exports = {
   entry: "./charity_finder.jsx",
@@ -25,9 +24,6 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: new webpack.DefinePlugin({
-    "process.env": dotenv.parsed
-  })
+  }
 };
 

@@ -110,21 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
-/***/ "./env/keys.js":
-/*!*********************!*\
-  !*** ./env/keys.js ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {module.exports = {
-  appId: process.env.REACT_APP_APP_ID,
-  appKey: process.env.REACT_APP_APP_KEY
-};
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
-
-/***/ }),
-
 /***/ "./frontend/App.jsx":
 /*!**************************!*\
   !*** ./frontend/App.jsx ***!
@@ -196,11 +181,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // import { app_id, app_key } from '../env/keys'
 
-var appId = __webpack_require__(/*! ../env/keys */ "./env/keys.js").appId;
-
-var appKey = __webpack_require__(/*! ../env/keys */ "./env/keys.js").appKey;
 
 var CharityIndex = function CharityIndex(_ref) {
   var city = _ref.city,

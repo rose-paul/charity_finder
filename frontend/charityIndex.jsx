@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import CharityIndexItem from './indexItem';
 import Loader from "react-loader-spinner";
-// import { app_id, app_key } from '../env/keys'
-const appId = require("../env/keys").appId;
-const appKey = require("../env/keys").appKey;
 
 const CharityIndex = ({city, state, category}) => {
 
