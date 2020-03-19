@@ -8,9 +8,9 @@ const axios = require('axios');
 
 app.use(express.static(__dirname));
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "index.html"));
+});
 
 app.get("/call", async (req, res) => {
   await axios.get(
