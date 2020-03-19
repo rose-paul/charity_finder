@@ -77,7 +77,7 @@ The final switch statement renders the ```CharityIndex``` component, which is gi
         } else {
             fixedCity = fixedCity.join("%20")
         }
-        axios.get(`/call`, { 
+        axios.get("/call", { 
             params: {
             fixedCity,
             state,
@@ -93,7 +93,7 @@ The final switch statement renders the ```CharityIndex``` component, which is gi
 
     On the backend, an axios is called with the env vars (api keys) and the request info from the frontend. 
 
-    ```
+    `
     app.get("/call", async (req, res) => {
   await axios.get(
     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&categoryID=${req.query.category}&state=${req.query.state}&city=${req.query.fixedCity}`
@@ -104,7 +104,7 @@ The final switch statement renders the ```CharityIndex``` component, which is gi
     res.send(err)
   )
 })
-```
+`
 
 
 
