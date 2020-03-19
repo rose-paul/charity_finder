@@ -15,11 +15,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/call", async (req, res) => {
-  console.log(req)
   await axios.get(
-    `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&categoryID=${req.category}&state=${req.state}&city=${req.fixedCity}`
-  ).then( res =>
-    res.send(response)
+    `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&categoryID=${req.query.category}&state=${req.query.state}&city=${req.query.fixedCity}`
+  ).then( response => {
+    res.send(response.data)
+  }
   ).catch( err =>
     res.send(err)
   )

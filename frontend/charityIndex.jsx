@@ -23,13 +23,18 @@ const CharityIndex = ({city, state, category}) => {
         //     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${appId}&app_key=${appKey}&categoryID=${category}&state=${state}&city=${fixedCity}`
         //   )
 
-        const req = {
+        const params = {
           fixedCity,
           state,
           category
         }
-        console.log(req)
-        axios.get(`/call`, req)
+        axios.get(`/call`, { 
+          params: {
+          fixedCity,
+          state,
+          category
+        }
+      })
           .then(res => {
             console.log(res)
             setIndex(res.data);

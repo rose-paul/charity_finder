@@ -210,13 +210,18 @@ var CharityIndex = function CharityIndex(_ref) {
     //   )
 
 
-    var req = {
+    var params = {
       fixedCity: fixedCity,
       state: state,
       category: category
     };
-    console.log(req);
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/call", req).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/call", {
+      params: {
+        fixedCity: fixedCity,
+        state: state,
+        category: category
+      }
+    }).then(function (res) {
       console.log(res);
       setIndex(res.data);
     })["catch"](function (err) {
