@@ -87,12 +87,12 @@ React.useEffect( () => {
           .then(res => {
             res.data.message ? setError(res.data.message) : setIndex(res.data);
           })
-
     }, [])  
-    ```
+```
 
-     On the backend, an axios is called with the env vars (api keys) and the request info from the frontend. 
+ On the backend, an axios is called with the env vars (api keys) and the request info from the frontend. 
 
+```javascript
     app.get("/call", async (req, res) => {
   await axios.get(
     `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&categoryID=${req.query.category}&state=${req.query.state}&city=${req.query.fixedCity}`
@@ -103,6 +103,7 @@ React.useEffect( () => {
     res.send(err)
   )
 })
+```
 
 
 
