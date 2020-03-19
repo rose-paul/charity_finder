@@ -13,9 +13,11 @@ Charity Finder offers a simple, easy-to-use interface for finding charities base
 ### Backend
 * Express.js (for Heroku and env vars)
 
-## Questions Component
-The ```Questions``` Component keeps keeps track of what should be displayed and the state. The useEffect mimics componentDidMount to render the ```Location``` component,
-which is given the ```handleSubmit``` function. When it is called from the Location component, the switch statement in ```handleSubmit``` sets the state with whatever was inputed to the child component, then sets the display to the next component in the sequence.
+## Code
+
+### Questions Component
+The ```Questions``` component keeps track of display and state. 
+```useEffect``` mimics componentDidMount to first render the ```Location``` component, which is given the ```handleSubmit``` function. On submission of the ```Location``` component, the switch statement in ```handleSubmit``` sets ```Questions``` state with whatever the user inputed to the ```Location``` component. Then, ```handleSubmit``` sets the display to the next component in the sequence.
 
 ```javascript
 const Questions = () => {
@@ -66,8 +68,8 @@ const Questions = () => {
 }
 ```
 
-
-The final switch statement renders the ```CharityIndex``` component, which is given the user's search params. On mount, a get request is made to the backend, then displayed.
+### CharityIndex Component
+The final switch statement renders the ```CharityIndex``` component, which is given the user's search params. On mount, a get request is made to the backend to fetch the API results. I incorporate some formatting checks at each stage of input. 
 
 ```javascript
 React.useEffect( () => {
@@ -89,8 +91,8 @@ React.useEffect( () => {
           })
     }, [])  
 ```
-
- On the backend, an axios is called with the env vars (api keys) and the request info from the frontend. 
+### Express Backend
+ On the backend, I use axios to make a get request to the Charity Navigator API using the API keys (environment vairables). 
 
 ```javascript
     app.get("/call", async (req, res) => {
