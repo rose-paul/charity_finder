@@ -213,14 +213,12 @@ var CharityIndex = function CharityIndex(_ref) {
         category: category
       }
     }).then(function (res) {
-      setIndex(res.data);
-    })["catch"](function (err) {
-      setError(err.response);
+      res.data.message ? setError(res.data.message) : setIndex(res.data);
     });
   }, []);
   if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "error"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Status ", error.status, ": ", error.statusText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, error.data.errorMessage.message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, error), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/"
   }, "Click to Try Again!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure you use the correct two-letter state code and spell the city right. If it's a status 404, there may be nothing in our database for that city. Try to search for a nearby larger one."));
   return indexItems ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

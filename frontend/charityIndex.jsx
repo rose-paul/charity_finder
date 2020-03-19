@@ -17,7 +17,6 @@ const CharityIndex = ({city, state, category}) => {
         } else {
             fixedCity = fixedCity.join("%20")
         }
-
         axios.get(`/call`, { 
             params: {
             fixedCity,
@@ -26,18 +25,14 @@ const CharityIndex = ({city, state, category}) => {
           }
         })
           .then(res => {
-            setIndex(res.data);
+            res.data.message ? setError(res.data.message) : setIndex(res.data);
           })
-          .catch(err => {
-            setError(err.response);
-          });
 
     }, [])
 
     if (error) return (
       <div className="error">
-        <h1>Status {error.status}: {error.statusText}</h1>
-        <p>{error.data.errorMessage.message}</p>
+        <h1>{error}</h1>
         <Link to="/">Click to Try Again!</Link>
         <p>Make sure you use the correct two-letter state code and spell the city right. If it's a status 404,
           there may be nothing in our database for that city. Try to search for a nearby larger one.
