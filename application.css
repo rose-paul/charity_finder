@@ -23,7 +23,8 @@ header > * {
           -ms-animation: fadein 1.5s; /* Internet Explorer */
            -o-animation: fadein 1.5s; /* Opera < 12.1 */
               animation: fadein 1.5s;
-              font-family: 'Indie Flower', cursive;
+              font-family: 'Open Sans Condensed', sans-serif;
+
 
 }
 
@@ -34,7 +35,8 @@ h1 {
 h3 {
     width: 50vw;
     text-align: center;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 @keyframes fadein {
@@ -147,7 +149,8 @@ h3 {
 
 .curious > p {
     width: 50vw;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 button {
