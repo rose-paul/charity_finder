@@ -25,7 +25,10 @@ const CharityIndex = ({city, state, category}) => {
           }
         })
           .then(res => {
-            res.data.message ? setError(res.data.message) : setIndex(res.data);
+            return setIndex(res.data);
+          })
+          .catch(err => {
+            return setError(err.message)
           })
 
     }, [])

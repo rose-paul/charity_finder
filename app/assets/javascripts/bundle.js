@@ -213,7 +213,9 @@ var CharityIndex = function CharityIndex(_ref) {
         category: category
       }
     }).then(function (res) {
-      res.data.message ? setError(res.data.message) : setIndex(res.data);
+      return setIndex(res.data);
+    })["catch"](function (err) {
+      return setError(err.message);
     });
   }, []);
   if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
